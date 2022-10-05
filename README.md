@@ -10,6 +10,11 @@ function isPalindrome(line) {
 // compare values
   let lineStr = line.toString()
   let strArr = lineStr.split('').reverse().join('')
-  return strArr === lineStr ? true : false 
+  return strArr === lineStr ? true : false
+  
+  // Optimize
+  //   let lineStr = line.toString()
+  // return lineStr.split('').reverse().join('') === lineStr
+  
 }
 ```
