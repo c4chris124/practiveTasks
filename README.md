@@ -1,0 +1,2 @@
+# practiveTasks
+Algorithms exercises
