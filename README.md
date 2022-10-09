@@ -39,3 +39,44 @@ function isPalindrome(line) {
 }
 
 ```
+## Exercise Friday 10/07/2022
+```js
+import React from 'react';
+
+export class Counter extends React.Component {
+  constructor(props) {
+    // Your state
+    super()
+    this.state = {
+      counter: 0
+    }
+    
+    this.increment = this.increment.bind(this)
+    this.decrement = this.decrement.bind(this)
+  }
+  
+  increment(){
+    this.setState({ counter: this.state.counter + 1})
+  }
+  
+  decrement(){
+    this.setState({ counter: this.state.counter - 1})
+  }
+  
+  // Your event handlers 
+  render() {
+    return (
+      <div>
+        <h1 id="counter">{this.state.counter}</h1>
+          <button id="increment" type="button" onClick={this.increment}>
+            Decrement
+          </button>
+          <button id="decrement" type="button" onClick={this.decrement}>
+            Increment
+          </button>
+      </div>
+    )
+  }
+}
+
+```
