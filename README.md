@@ -80,3 +80,48 @@ export class Counter extends React.Component {
 }
 
 ```
+
+```js
+const React = require("react");
+
+class WishlistForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      name: "",
+      wish: "",
+      priority: 1
+    } 
+      // this.handleChange = this.handleChange.bind(this)
+      this.handleSubmit = this.handleSubmit.bind(this)
+  }
+    
+      // handleChange(e){
+      //   const event = e.target
+      //   this.setState=({...this.state, [event.name]: event.value})
+      // }
+  
+      handleSubmit(event){
+      event.preventDefault()
+      this.props.send(this.state)
+    }
+  
+  render() {
+    const{name, wish, priority} = this.state
+    return (
+      <form onSubmit={this.handleSubmit}>
+       <input id="name" name="name" onChange={(e) => this.setState({name: e.target.value})} value={name}/>
+       <textarea id="wish" name="wish" onChange={(e) => this.setState({wish: e.target.value})} value={wish}/>
+       <select id="priority" name="priority" onChange={(e) => this.setState({priority: e.target.value})} value={priority}>
+        <option value="1" default>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      </form>
+    );
+  }
+};
+
+```
